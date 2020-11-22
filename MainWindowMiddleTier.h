@@ -3,16 +3,18 @@
 
 #include "IMainWindow.h"
 
-
 class MainWindowMiddleTier
 {
 public:
     MainWindowMiddleTier(IMainWindow *dlg);
-    void buildUI();
-    void checkValidity();
+    void processFarenheitInput();
+    void processCelsiusInput();
+
 
 private:
    IMainWindow *dlg;
+   bool checkFarenheitValidity(const double &value);
+   bool checkCelsiusValidity(const double &value);
 };
 
 #endif // MAINWINDOWMIDDLETIER_H

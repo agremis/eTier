@@ -17,13 +17,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     MainWindowMiddleTier.cpp \
+    Temperature.cpp \
     main.cpp \
     MainWindow.cpp
 
 HEADERS += \
     IMainWindow.h \
     MainWindow.h \
-    MainWindowMiddleTier.h
+    MainWindowMiddleTier.h \
+    Temperature.h
 
 FORMS += \
     MainWindow.ui
