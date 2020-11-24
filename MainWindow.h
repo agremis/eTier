@@ -30,7 +30,7 @@ public:
     void setCelsiusValue(const double &value);
     void toggleCelsiusValidState(const bool &value);
 private slots:
-    void on_edtCelsius_textChanged(const QString &arg1);
-    void on_edtFarenheit_textChanged(const QString &arg1);
+    void on_edtCelsius_textEdited(const QString &arg1);
+    void on_edtFarenheit_textEdited(const QString &arg1);
 };
 #endif // MAINWINDOW_H
