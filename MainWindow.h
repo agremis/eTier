@@ -23,14 +23,14 @@ private:
 
     // IMainWindow interface
 public:
-    double getFarenheitValue();
-    void setFarenheitValue(const double &value);
-    void toggleFarenheitValidState(const bool &value);
+    double getFahrenheitValue();
+    void setFahrenheitValue(const double &value);
+    void toggleFahrenheitValidState(const bool &value);
     double getCelsiusValue();
     void setCelsiusValue(const double &value);
     void toggleCelsiusValidState(const bool &value);
 private slots:
     void on_edtCelsius_textEdited(const QString &arg1);
-    void on_edtFarenheit_textEdited(const QString &arg1);
+    void on_edtFahrenheit_textEdited(const QString &arg1);
 };
 #endif // MAINWINDOW_H
