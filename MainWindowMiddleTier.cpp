@@ -6,17 +6,17 @@ MainWindowMiddleTier::MainWindowMiddleTier(IMainWindow *dlg):dlg(dlg)
 
 }
 
-void MainWindowMiddleTier::processFarenheitInput()
+void MainWindowMiddleTier::processFahrenheitInput()
 {
-    const double value = this->dlg->getFarenheitValue();
-    if (this->checkFarenheitValidity(value))
+    const double value = this->dlg->getFahrenheitValue();
+    if (this->checkFahrenheitValidity(value))
     {
         Temperature temp(value, Temperature::Fahrenheit);
         this->dlg->setCelsiusValue(temp.asCelsius());
     }
     else
     {
-        this->dlg->toggleFarenheitValidState(false);
+        this->dlg->toggleFahrenheitValidState(false);
     }
 }
 
@@ -26,7 +26,7 @@ void MainWindowMiddleTier::processCelsiusInput()
     if (this->checkCelsiusValidity(value))
     {
         Temperature temp(value, Temperature::Celsius);
-        this->dlg->setFarenheitValue(temp.asFahrenheit());
+        this->dlg->setFahrenheitValue(temp.asFahrenheit());
     }
     else
     {
@@ -34,7 +34,7 @@ void MainWindowMiddleTier::processCelsiusInput()
     }
 }
 
-bool MainWindowMiddleTier::checkFarenheitValidity(const double &value)
+bool MainWindowMiddleTier::checkFahrenheitValidity(const double &value)
 {
     return true;
 }

@@ -4,9 +4,9 @@
 class IMainWindow
 {
 public:
-    virtual double getFarenheitValue() = 0;
-    virtual void setFarenheitValue(const double &value) = 0;
-    virtual void toggleFarenheitValidState(const bool &value) = 0;
+    virtual double getFahrenheitValue() = 0;
+    virtual void setFahrenheitValue(const double &value) = 0;
+    virtual void toggleFahrenheitValidState(const bool &value) = 0;
 
     virtual double getCelsiusValue() = 0;
     virtual void setCelsiusValue(const double &value) = 0;

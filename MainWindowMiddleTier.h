@@ -7,13 +7,13 @@ class MainWindowMiddleTier
 {
 public:
     MainWindowMiddleTier(IMainWindow *dlg);
-    void processFarenheitInput();
+    void processFahrenheitInput();
     void processCelsiusInput();
 
 
 private:
    IMainWindow *dlg;
-   bool checkFarenheitValidity(const double &value);
+   bool checkFahrenheitValidity(const double &value);
    bool checkCelsiusValidity(const double &value);
 };
 
