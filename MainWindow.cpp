@@ -8,6 +8,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->mwMiddleTier = new MainWindowMiddleTier(this);
+
+    connect(ui->edtCelsius, &QLineEdit::editingFinished, this, &MainWindow::fineshedEditigCelsius);
+    connect(ui->edtFahrenheit, &QLineEdit::editingFinished, this, &MainWindow::fineshedEditigFahrenheit);
 }
 
 MainWindow::~MainWindow()
@@ -28,7 +31,19 @@ void MainWindow::setFahrenheitValue(const double &value)
 
 void MainWindow::toggleFahrenheitValidState(const bool &value)
 {
-    //change color, blink or smth
+    QPalette palette;
+    if (value)
+    {
+        palette.setColor(QPalette::Base, Qt::white);
+        palette.setColor(QPalette::Text, Qt::black);
+    }
+    else
+    {
+        palette.setColor(QPalette::Base, Qt::red);
+        palette.setColor(QPalette::Text, Qt::yellow);
+    }
+
+    ui->edtFahrenheit->setPalette(palette);
 }
 
 double MainWindow::getCelsiusValue()
@@ -43,15 +58,37 @@ void MainWindow::setCelsiusValue(const double &value)
 
 void MainWindow::toggleCelsiusValidState(const bool &value)
 {
-    //change color, blink or smth
+    QPalette palette;
+    if (value)
+    {
+        palette.setColor(QPalette::Base, Qt::white);
+        palette.setColor(QPalette::Text, Qt::black);
+    }
+    else
+    {
+        palette.setColor(QPalette::Base, Qt::red);
+        palette.setColor(QPalette::Text, Qt::yellow);
+    }
+
+    ui->edtCelsius->setPalette(palette);
 }
 
-void MainWindow::on_edtCelsius_textEdited(const QString &arg1)
+void MainWindow::fineshedEditigCelsius()
 {
     this->mwMiddleTier->processCelsiusInput();
 }
 
-void MainWindow::on_edtFahrenheit_textEdited(const QString &arg1)
+void MainWindow::fineshedEditigFahrenheit()
 {
     this->mwMiddleTier->processFahrenheitInput();
+}
+
+void MainWindow::clearFahrenheitField()
+{
+    this->ui->edtFahrenheit->clear();
+}
+
+void MainWindow::clearCelsiusField()
+{
+    this->ui->edtCelsius->clear();
 }

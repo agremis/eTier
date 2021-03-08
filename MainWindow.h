@@ -29,8 +29,14 @@ public:
     double getCelsiusValue();
     void setCelsiusValue(const double &value);
     void toggleCelsiusValidState(const bool &value);
+
 private slots:
-    void on_edtCelsius_textEdited(const QString &arg1);
-    void on_edtFahrenheit_textEdited(const QString &arg1);
+    void fineshedEditigCelsius();
+    void fineshedEditigFahrenheit();
+
+    // IMainWindow interface
+public:
+    void clearFahrenheitField();
+    void clearCelsiusField();
 };
 #endif // MAINWINDOW_H

@@ -7,10 +7,12 @@ public:
     virtual double getFahrenheitValue() = 0;
     virtual void setFahrenheitValue(const double &value) = 0;
     virtual void toggleFahrenheitValidState(const bool &value) = 0;
+    virtual void clearFahrenheitField() = 0;
 
     virtual double getCelsiusValue() = 0;
     virtual void setCelsiusValue(const double &value) = 0;
     virtual void toggleCelsiusValidState(const bool &value) = 0;
+    virtual void clearCelsiusField() = 0;
 };
 
 #endif // IMAINWINDOW_H
